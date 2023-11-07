@@ -16,8 +16,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { useRouter } from 'next/navigation'
 import { useDispatch } from 'react-redux'
-import authReduder, { logIn } from '@/redux/slices/auth'
-import { use } from 'react'
+import { logIn } from '@/redux/slices/auth'
 
 const formSchema = z.object({
   username: z
@@ -66,6 +65,15 @@ export function LoginForm() {
       form.resetField('username')
 
       push('/')
+    } else {
+      form.setError('username', {
+        type: 'manual',
+        message: `Username is incorrect.(Try 'testuser')`,
+      })
+      form.setError('password', {
+        type: 'manual',
+        message: `Password is incorrect.(Try 'testpassword123')`,
+      })
     }
   }
 
