@@ -14,7 +14,10 @@ const NavPanel = () => {
   }
 
   return (
-    <div className="sticky left-0 top-0 mx-auto flex items-center justify-between border-b border-zinc-200 bg-transparent px-8 py-4 font-semibold">
+    <div
+      id="navbarrr"
+      className="sticky left-0 top-0 z-10 mx-auto flex items-center justify-between border-b border-zinc-200 bg-[var(--header-background)] px-8 py-4 font-semibold"
+    >
       <h1>ICAP</h1>
       <div className="flex items-center gap-2">
         <ModeToggle />
