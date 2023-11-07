@@ -1,4 +1,11 @@
-import type { Metadata } from 'next'
+import { type ClassValue, clsx } from 'clsx'
+import { Metadata } from 'next'
+import { useCallback, useEffect, useRef } from 'react'
+import { twMerge } from 'tailwind-merge'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 export function constructMetadata({
   title = 'ICAP - Lopatko V.',
